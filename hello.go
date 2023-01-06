@@ -4,6 +4,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"example.com/greetings"
 	// Part of standard library, for formatting text
@@ -14,7 +15,20 @@ import (
 //$ go mod tidy
 
 func main() {
-	message := greetings.Hello("Kyle")
+	// Set props for the Logger:
+	// log entry prefix and a flag to disable printing the time,
+	// source file, and line number.
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
+
+	message, err := greetings.Hello("Kyle")
+	//If error, print it and exit
+	//Returns: greetings: 	empty name
+	// exit status 1
+	if err != nil {
+		log.Fatal(err)
+	}
+	//if no error, print the message
 	fmt.Println(message)
 }
 
