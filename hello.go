@@ -7,6 +7,7 @@ import (
 	"log"
 
 	"example.com/greetings"
+	// "golang.org/x/text/message"
 	// Part of standard library, for formatting text
 	// "rsc.io/quote"
 )
@@ -21,7 +22,12 @@ func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
-	message, err := greetings.Hello("Kyle")
+	//Slice of names
+	names := []string{"gladys", "Samantha", "Darrin"}
+
+	// message, err := greetings.Hello("Kyle") for single name
+
+	messages, err := greetings.Hellos(names)
 	//If error, print it and exit
 	//Returns: greetings: 	empty name
 	// exit status 1
@@ -29,7 +35,7 @@ func main() {
 		log.Fatal(err)
 	}
 	//if no error, print the message
-	fmt.Println(message)
+	fmt.Println(messages)
 }
 
 //main function executes by default when main package runs ($go run .)
