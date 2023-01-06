@@ -6,10 +6,8 @@ import (
 	"fmt"
 
 	"example.com/greetings"
-
 	// Part of standard library, for formatting text
-
-	"rsc.io/quote"
+	// "rsc.io/quote"
 )
 
 //To add as a requirement and generate a go.sum for authenticating:
