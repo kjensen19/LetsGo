@@ -17,3 +17,7 @@ require (
 )
 
 replace example.com/greetings => ../greetings
+
+//Used to replace the path for the greetings module since it isn't hosted/available
+// generated with $ go mod edit -replace example.com/greetings=../greetings
+//then $ go mod tidy
